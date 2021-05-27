@@ -1,0 +1,8 @@
+
+[user]
+	name = Abdel Chicas
+	email = amchicas@gmail.com
+[core]
+	editor = vim
+	excludesfile = /home/swader/.gitignore
+	autocrlf = input
