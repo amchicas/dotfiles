@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+gnome-terminal &
+firefox &
+chromium &
+thunderbird &
+
