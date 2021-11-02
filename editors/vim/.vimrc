@@ -18,6 +18,8 @@ Plug 'edkolev/tmuxline.vim'
 " let Vundle manage Vundle, required
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
 Plug 'gorodinskiy/vim-coloresque'
 
 
@@ -51,10 +53,12 @@ set showcmd
 set ruler
 set showmatch 
 set nocompatible              " be iMproved, required
-filetype off                  " required
 set laststatus=2 
 set cursorline
 highlight clear SignColumn
+highlight Comment gui=italic
+highlight Comment cterm=italic
+
 set nobackup
 set foldtext=foldtext()
 set noswapfile
@@ -90,12 +94,9 @@ let g:netrw_browse_split = 4
 let g:netrw_winsize = 20
 
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 " Key maps
-
+let g:tmuxline_powerline_separators = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'badwolf'
@@ -114,11 +115,15 @@ nmap <leader><C-e> :Buffers<CR>
 nmap <leader><C-g> :GFiles?<CR>
 nmap <leader><C-r> :! 
 nmap <leader>1 :Vexplore<CR>
+
 nmap <Leader>nt :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>wq :wq<CR>
+
+silent! call repeat#set("\<Plug>surround", v:count)
 
